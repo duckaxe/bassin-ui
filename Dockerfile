@@ -1,5 +1,5 @@
 FROM alpine:3.22
 
-RUN mkdir -p /www
+RUN mkdir -p /ui
 
-COPY www/ /www/
+COPY web/ /ui/

@@ -62,11 +62,16 @@ export const fetchUsers = async (): Promise<User[]> => {
             usernames.map(async (username) => {
                 const res = await safeFetch(`/users/${username}?${Date.now()}`);
                 const data = await res.json();
+
+                if (Date.now() / 1000 - data.lastshare > 3600) {
+                    return null;
+                }
+
                 return { ...data, username } as User;
             })
         );
 
-        return users;
+        return users.filter((user): user is User => user !== null);
     } catch (error) {
         console.error('Error in fetchUsers:', error);
         throw error instanceof Error ? error : new Error('Unknown error in fetchUsers');

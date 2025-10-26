@@ -6,7 +6,7 @@ interface TableProps {
     user: User
 }
 
-export default function Divider({user}: TableProps) {
+export default function Divider({ user }: TableProps) {
     return (
         <table>
             <thead>
@@ -21,7 +21,7 @@ export default function Divider({user}: TableProps) {
                     <th scope="col">1 Hour</th>
                     <th scope="col">1 Day</th>
                     <th scope="col">1 Week</th>
-                    
+
                     <th scope="col">↓ Best</th>
                     <th scope="col">Best Ever</th>
                     <th scope="col">Total</th>

@@ -1,28 +1,44 @@
-import { useState } from 'react';
 import './Divider.scss';
+import { useState, useEffect } from 'react';
 
 interface DividerProps {
-    primary: string,
-    secondary: string
+    username: string;
+    onToggle: () => void;
+    isExpanded: boolean;
 }
 
-export default function Divider({ primary, secondary }: DividerProps) {
-    const [isActive, setIsActive] = useState(false);
+export default function Divider({ username, onToggle, isExpanded }: DividerProps) {
+    const LS_KEY = `userVisible_${username.slice(0, 21)}`;
 
-    const toggleClass = () => {
-        setIsActive(prev => !prev);
+    const [isUserVisible, setIsUserVisible] = useState<boolean>(() => {
+        const stored = localStorage.getItem(LS_KEY);
+        return stored !== null ? JSON.parse(stored) : true;
+    });
+
+    useEffect(() => {
+        localStorage.setItem(LS_KEY, JSON.stringify(isUserVisible));
+    }, [LS_KEY, isUserVisible]);
+
+    const toggleUserVisibility = () => {
+        setIsUserVisible(prev => !prev);
     };
 
     return (
         <div className='divider'>
-            <span>{secondary}</span>
-            <strong
-                className={isActive ? 'active' : ''}
-                onClick={toggleClass}
-                title={(isActive ? 'Show' : 'Hide') + ' username'}
-            >
-                {primary}
-            </strong>
+            <div>
+                <span>User</span>
+                <strong className={isUserVisible ? '' : 'hidden'}>
+                    {username}
+                </strong>
+            </div>
+            <div className='controls'>
+                <button onClick={toggleUserVisibility} title='Toggle user visibility'>
+                    <i className={`eye ${isUserVisible ? '' : 'hidden'}`}></i>
+                </button>
+                <button onClick={onToggle} title='Toggle table visibility'>
+                    <i className={`arrow ${isExpanded ? 'down' : 'up'}`}></i>
+                </button>
+            </div>
         </div>
     );
-};
+}

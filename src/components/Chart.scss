@@ -1,5 +1,5 @@
 .chart {
-    margin: 0 0 3rem;
+    margin: 0 0 2.5rem;
     position: relative;
 
     ul {
@@ -22,16 +22,11 @@
         flex: 1 1 0;
         max-width: calc((100% - 59px) / 60); // 60 items + 59 gaps
         background: var(--color-light-grey);
-        clip-path: polygon(
-            0% calc(100% * (1 - var(--start))),
-            100% calc(100% * (1 - var(--end))),
-            100% 100%,
-            0% 100%
-        );
+        clip-path: polygon(0% calc(100% * (1 - var(--start))), 100% calc(100% * (1 - var(--end))), 100% 100%, 0% 100%);
 
         &:first-child {
             display: none;
-        }          
+        }
     }
 
     small {
@@ -42,5 +37,5 @@
         position: absolute;
         top: 0;
         width: 100%;
-    } 
+    }
 }

@@ -1,17 +1,21 @@
 .user {
     margin: 1rem 0;
 
+    + .user {
+        margin-top: 2.5rem;
+    }
+
     table {
         width: 100%;
-        margin: 1.5rem 0;
+        margin: 1rem 0;
         border-collapse: collapse;
-    
+
         @media (max-width: 1023px) {
             overflow-x: auto;
             display: block;
         }
     }
-    
+
     tr {
         &:first-child th {
             font-size: 1.2rem;
@@ -33,7 +37,7 @@
             }
         }
     }
-    
+
     th,
     td {
         padding: 0.5em;
@@ -49,7 +53,7 @@
         font-size: 1.2rem;
         font-weight: bold;
         text-align: right;
-    
+
         > span {
             color: var(--color-grey);
             font-size: 1rem;

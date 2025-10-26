@@ -5,11 +5,11 @@ interface MessageProps {
     msg: string
 }
 
-export default function Message({msg}: MessageProps) {
+export default function Message({ msg }: MessageProps) {
     return (
         <div className='message'>
             <strong>{msg}</strong>
-                
+
             <table>
                 <tbody>
                     <tr>

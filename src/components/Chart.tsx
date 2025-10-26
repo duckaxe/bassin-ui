@@ -8,7 +8,7 @@ interface ChartProps {
 
 export default function Chart({ chart }: ChartProps) {
     const maxHashrate = Math.max(...chart);
-    
+
     return (
         <div className='chart'>
             <ul>
@@ -29,7 +29,7 @@ export default function Chart({ chart }: ChartProps) {
                     );
                 })}
             </ul>
-            
+
             {chart.length === 1 && <small>Preparing 5 Minutes Hashrate Chart ...</small>}
         </div>
     );

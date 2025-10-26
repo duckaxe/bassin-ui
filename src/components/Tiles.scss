@@ -18,13 +18,17 @@
 
 	width: 100%;
 	overflow: hidden;
-	
+
+	@media (min-width: 768px) {
+		min-height: 292px;
+	}
+
 	&-headline {
 		font-size: 1.2rem;
 		text-align: center;
 		margin: 2rem 0 0;
 	}
-	
+
 	&-items {
 		padding: 1rem 0;
 		display: grid;

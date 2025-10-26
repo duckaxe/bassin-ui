@@ -13,4 +13,3 @@ export default function Metric({ label, headline }: MetricProps) {
 		</section>
 	);
 }
-  

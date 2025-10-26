@@ -67,5 +67,5 @@ export default function Tiles({ pool }: TilesProps) {
 				</ul>
 			</section>
 		</div>
-  	);
+	);
 }

@@ -4,7 +4,7 @@
  "hashrate1hr": "1.57T",
  "hashrate1d": "1.39T",
  "hashrate7d": "410G",
- "lastshare": 1752759170,
+ "lastshare": 1761469089,
  "workers": 2,
  "shares": 66872638,
  "bestshare": 146605934.0824851,
@@ -18,7 +18,7 @@
    "hashrate1hr": "1.05T",
    "hashrate1d": "933G",
    "hashrate7d": "276G",
-   "lastshare": 1752759170,
+   "lastshare": 1761469089,
    "shares": 45058218,
    "bestshare": 146605934.0824851,
    "bestever": 146605934
@@ -30,7 +30,7 @@
    "hashrate1hr": "515G",
    "hashrate1d": "454G",
    "hashrate7d": "134G",
-   "lastshare": 1752759168,
+   "lastshare": 1761469089,
    "shares": 21814420,
    "bestshare": 17426432.00804108,
    "bestever": 17426432

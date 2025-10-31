@@ -1,31 +1,16 @@
-import { BASSIN_STRATUM_PORT } from '../helpers/constants';
 import './Message.scss';
 
 interface MessageProps {
-    msg: string
+    msg: string,
+    severity?: 'warn' | 'error';
+    children?: React.ReactNode;
 }
 
-export default function Message({ msg }: MessageProps) {
+export default function Message({ msg, severity, children }: MessageProps) {
     return (
         <div className='message'>
-            <strong>{msg}</strong>
-
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Stratum</td>
-                        <td><code>{`${window.location.hostname}:${BASSIN_STRATUM_PORT}`}</code></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><code>&lt;btcaddress&gt;.&lt;worker&gt;</code></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><code>x</code></td>
-                    </tr>
-                </tbody>
-            </table>
+            <strong className={severity}>{msg}</strong>
+            {children && children}
         </div>
     );
 };

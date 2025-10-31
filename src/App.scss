@@ -34,7 +34,8 @@
 	--color-pool: rgb(83, 213, 253);
 	--color-grey: #919eab;
 	--color-light-grey: #444;
-	--color-orange: orange;
+	--color-orange: #ffa500;
+	--color-red: #ff3434;
 }
 
 @media (prefers-color-scheme: light) {
@@ -44,7 +45,6 @@
 		--color-pool: rgb(16, 121, 150);
 		--color-grey: #666;
 		--color-light-grey: #ccc;
-		--color-orange: orange;
 	}
 }
 

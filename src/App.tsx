@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
 import Loader from './components/Loader';
+import Message from './components/Message';
 import { fetchPool, fetchUsers } from './helpers/fetch';
 import { CHART_HISTORY_LENGTH, POLL_INTERVAL_SECONDS } from './helpers/constants';
 import { parseHashrate } from './helpers/convert';
@@ -14,10 +15,12 @@ const App = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [chart, setChart] = useState<number[]>([]);
   const [timer, setTimer] = useState<number>(0);
+  const [error, setError] = useState<boolean>(false);
 
   const loadData = useCallback(async () => {
     try {
       const [poolData, usersData] = await Promise.all([fetchPool(), fetchUsers()]);
+      setError(false);
 
       if (poolData) {
         setPool(poolData);
@@ -29,6 +32,7 @@ const App = () => {
       }
     } catch (error) {
       console.error('Data fetch error:', error);
+      setError(true);
     }
   }, []);
 
@@ -52,7 +56,9 @@ const App = () => {
   return (
     <>
       <Footer timer={timer} />
-      {!pool || !users ? (
+      {error ? (
+        <Message msg="Is Bitcoin Node fully synced and running?" severity="error" />
+      ) : (!pool) ? (
         <Loader />
       ) : (
         <Dashboard pool={pool} users={users} chart={chart} />

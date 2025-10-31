@@ -1,6 +1,6 @@
 import './Footer.scss';
 import Logo from '../images/logo.svg';
-import { POLL_INTERVAL_SECONDS } from '../helpers/constants';
+import { BASSIN_STRATUM_PORT, POLL_INTERVAL_SECONDS } from '../helpers/constants';
 
 interface TimerProps {
     timer: number;
@@ -20,9 +20,9 @@ export default function Footer({ timer }: TimerProps) {
                     <figcaption className="font-monospace">BASSIN</figcaption>
                 </figure>
 
-                <code>
-                    Every decentralized share counts
-                </code>
+                <span>
+                    {`${window.location.hostname}:${BASSIN_STRATUM_PORT}`}
+                </span>
             </div>
         </footer>
     );

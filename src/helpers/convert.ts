@@ -24,7 +24,7 @@ export const parseHashrate = (value: string): number => {
     const match = value.trim().match(/^([\d.,]+)\s*([KMGTPEZY]?)[H]?\b/i);
 
     if (!match) return NaN;
-  
+
     const numericPart = parseFloat(match[1].replace(',', '.')); // Komma-Support
     const unit = match[2].toUpperCase();
     const multiplier = units[unit] || 1;
@@ -66,7 +66,7 @@ export const secondsToDHM = (s: number): string => {
 
 export const diffToNowDHM = (timestamp: number): string => {
     const diffTime = Math.floor(Date.now() / 1000) - timestamp;
-    
+
     return diffTime > 60 ? `${secondsToDHM(diffTime)} <span>ago</span>` : 'now';
 }
 
@@ -77,4 +77,4 @@ export const formatTime = (timestamp: number): string => {
 
 export function createMarkup(dirty: string) {
     return { __html: dirty };
-  }
+}

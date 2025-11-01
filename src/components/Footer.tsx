@@ -1,5 +1,6 @@
 import './Footer.scss';
 import Logo from '../images/logo.svg';
+import GitHub from '../images/github.svg';
 import { BASSIN_STRATUM_PORT, POLL_INTERVAL_SECONDS } from '../helpers/constants';
 
 interface TimerProps {
@@ -20,9 +21,16 @@ export default function Footer({ timer }: TimerProps) {
                     <figcaption className="font-monospace">BASSIN</figcaption>
                 </figure>
 
-                <span>
-                    {`${window.location.hostname}:${BASSIN_STRATUM_PORT}`}
-                </span>
+                <div>
+                    <p>
+                        <span>Stratum Host</span>
+                        <code>{`${window.location.hostname}:${BASSIN_STRATUM_PORT}`}</code>
+                    </p>
+
+                    <a href="https://github.com/duckaxe/bassin" title='BASSIN on GitHub'>
+                        <img src={GitHub} width={24} height={24} alt="GitHub" />
+                    </a>
+                </div>
             </div>
         </footer>
     );

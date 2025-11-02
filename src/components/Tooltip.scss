@@ -1,7 +1,7 @@
 .tooltip {
     position: absolute;
     transform: translate(-50%);
-    background: #333;
+    background: var(--color-light-grey);
     color: var(--color-front);
     border-radius: 0.25rem;
     padding: 0.25rem 0.5rem;
@@ -17,6 +17,6 @@
         margin-left: -0.25rem;
         border-width: 0.25rem;
         border-style: solid;
-        border-color: #333 transparent transparent transparent;
+        border-color: var(--color-light-grey) transparent transparent transparent;
     }
 }

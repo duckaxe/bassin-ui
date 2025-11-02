@@ -25,7 +25,7 @@ export const parseHashrate = (value: string): number => {
 
     if (!match) return NaN;
 
-    const numericPart = parseFloat(match[1].replace(',', '.')); // Komma-Support
+    const numericPart = parseFloat(match[1].replace(',', '.'));
     const unit = match[2].toUpperCase();
     const multiplier = units[unit] || 1;
 
@@ -42,12 +42,12 @@ export const abbreviateNumber = (value: number, withMarkup = true): string => {
 
     for (const { limit, symbol } of units) {
         if (value >= limit) {
-            const formatted = (value / limit).toFixed(2);
+            const formatted = parseFloat((value / limit).toFixed(2)).toString();
             return formatted + (withMarkup ? `<span>${symbol}</span>` : ` ${symbol}`);
         }
     }
 
-    return value.toFixed(2);
+    return parseFloat(value.toFixed(2)).toString();
 };
 
 export const secondsToDHM = (s: number): string => {

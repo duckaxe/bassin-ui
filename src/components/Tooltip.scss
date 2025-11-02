@@ -1,0 +1,22 @@
+.tooltip {
+    position: absolute;
+    transform: translate(-50%);
+    background: #333;
+    color: var(--color-front);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    z-index: 999;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -0.25rem;
+        border-width: 0.25rem;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+    }
+}

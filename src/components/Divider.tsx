@@ -1,5 +1,6 @@
 import './Divider.scss';
 import { useState, useEffect } from 'react';
+import { Tooltip } from './Tooltip';
 
 interface DividerProps {
     username: string;
@@ -27,17 +28,23 @@ export default function Divider({ username, onToggle, isExpanded }: DividerProps
         <div className='divider'>
             <div>
                 <span>User</span>
-                <strong className={isUserVisible ? '' : 'hidden'}>
-                    {username}
-                </strong>
+                <Tooltip text={username}>
+                    <strong className={isUserVisible ? '' : 'hidden'}>
+                        {username}
+                    </strong>
+                </Tooltip>
             </div>
             <div className='controls'>
-                <button onClick={toggleUserVisibility} title='Toggle user visibility'>
-                    <i className={`eye ${isUserVisible ? '' : 'hidden'}`}></i>
-                </button>
-                <button onClick={onToggle} title='Toggle table visibility'>
-                    <i className={`arrow ${isExpanded ? 'down' : 'up'}`}></i>
-                </button>
+                <Tooltip text='User visibility'>
+                    <button onClick={toggleUserVisibility}>
+                        <i className={`eye ${isUserVisible ? '' : 'hidden'}`}></i>
+                    </button>
+                </Tooltip>
+                <Tooltip text='Table visibility'>
+                    <button onClick={onToggle}>
+                        <i className={`arrow ${isExpanded ? 'down' : 'up'}`}></i>
+                    </button>
+                </Tooltip>
             </div>
         </div>
     );

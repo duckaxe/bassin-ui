@@ -27,7 +27,8 @@ footer {
         align-items: center;
     }
 
-    img {
+    img,
+    svg {
         display: block;
     }
 
@@ -58,6 +59,18 @@ footer {
 
         span {
             color: var(--color-grey);
+            pointer-events: none;
+        }
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: var(--color-grey);
+        transition: fill 250ms;
+
+        &:hover {
+            fill: var(--color-front);
         }
     }
 }

@@ -17,6 +17,7 @@ footer {
     }
 
     .wrapper {
+        height: 2.5rem;
         max-width: 1180px;
         margin: 0 auto;
         padding: 0 2rem;
@@ -26,19 +27,50 @@ footer {
         align-items: center;
     }
 
+    img,
+    svg {
+        display: block;
+    }
+
     figure {
         display: flex;
-        padding: 0.5rem 0 0;
+        position: relative;
+        top: 0.75rem;
+
+        figcaption {
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            position: relative;
+            top: 0.75rem;
+        }
     }
 
-    figcaption {
-        font-size: 0.85rem;
-        letter-spacing: 0.1rem;
-        margin: 0.75rem 0 0;
+    div {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        p {
+            font-size: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        span {
+            color: var(--color-grey);
+            pointer-events: none;
+        }
     }
 
-    span {
-        font-size: 0.8rem;
-        color: var(--color-grey);
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: var(--color-grey);
+        transition: fill 250ms;
+
+        &:hover {
+            fill: var(--color-front);
+        }
     }
 }

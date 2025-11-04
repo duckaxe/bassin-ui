@@ -13,6 +13,7 @@ export default function Divider({ user }: TableProps) {
                 <tr>
                     <th scope="col"></th>
                     <th scope="col" colSpan={4} className='font-barlow'>Hashrate</th>
+                    <th scope="col"></th>
                     <th scope="col" colSpan={4} className='font-barlow'>Shares</th>
                 </tr>
                 <tr>
@@ -21,7 +22,7 @@ export default function Divider({ user }: TableProps) {
                     <th scope="col">1 Hour</th>
                     <th scope="col">1 Day</th>
                     <th scope="col">1 Week</th>
-
+                    <th scope="col"></th>
                     <th scope="col">↓ Best</th>
                     <th scope="col">Best Ever</th>
                     <th scope="col">Total</th>
@@ -37,7 +38,7 @@ export default function Divider({ user }: TableProps) {
                         <td dangerouslySetInnerHTML={createMarkup(hashrateSuffix(worker.hashrate1hr))} />
                         <td dangerouslySetInnerHTML={createMarkup(hashrateSuffix(worker.hashrate1d))} />
                         <td dangerouslySetInnerHTML={createMarkup(hashrateSuffix(worker.hashrate7d))} />
-
+                        <td></td>
                         <td dangerouslySetInnerHTML={createMarkup(abbreviateNumber(worker.bestshare))} />
                         <td dangerouslySetInnerHTML={createMarkup(abbreviateNumber(worker.bestever))} />
                         <td dangerouslySetInnerHTML={createMarkup(abbreviateNumber(worker.shares))} />
@@ -51,7 +52,7 @@ export default function Divider({ user }: TableProps) {
                     <td dangerouslySetInnerHTML={createMarkup(hashrateSuffix(user.hashrate1hr))} />
                     <td dangerouslySetInnerHTML={createMarkup(hashrateSuffix(user.hashrate1d))} />
                     <td dangerouslySetInnerHTML={createMarkup(hashrateSuffix(user.hashrate7d))} />
-
+                    <td></td>
                     <td dangerouslySetInnerHTML={createMarkup(abbreviateNumber(user.bestshare))} />
                     <td dangerouslySetInnerHTML={createMarkup(abbreviateNumber(user.bestever))} />
                     <td dangerouslySetInnerHTML={createMarkup(abbreviateNumber(user.shares))} />

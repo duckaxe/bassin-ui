@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
 import Loader from './components/Loader';
-import Message from './components/Message';
+import Stepper from './components/Stepper';
 import { fetchPool, fetchUsers } from './helpers/fetch';
 import { CHART_HISTORY_LENGTH, POLL_INTERVAL_SECONDS } from './helpers/constants';
 import { parseHashrate } from './helpers/convert';
@@ -57,7 +57,7 @@ const App = () => {
     <>
       <Footer timer={timer} />
       {error ? (
-        <Message msg="Is Bitcoin Node fully synced and running?" severity="error" />
+        <Stepper step={1} />
       ) : (!pool) ? (
         <Loader />
       ) : (

@@ -2,12 +2,11 @@ import './Dashboard.scss';
 import React, { useState, useLayoutEffect, useEffect } from 'react';
 import Tiles from './Tiles';
 import Divider from './Divider';
-import Message from './Message';
+import Stepper from './Stepper';
 import Table from './Table';
 import Chart from './Chart';
 import { Pool } from '../interfaces/pool';
 import { User } from '../interfaces/users';
-import { BASSIN_STRATUM_PORT } from '../helpers/constants';
 
 interface DashboardProps {
 	pool: Pool;
@@ -79,24 +78,7 @@ const Dashboard: React.FC<DashboardProps> = ({ pool, users, chart }) => {
 					})}
 				</div>
 			) : (
-				<Message msg='Awaiting Shares from Miner ...' severity="warn">
-					<table>
-						<tbody>
-							<tr>
-								<td>Stratum</td>
-								<td><code>{`${window.location.hostname}:${BASSIN_STRATUM_PORT}`}</code></td>
-							</tr>
-							<tr>
-								<td>Username</td>
-								<td><code>&lt;btcaddress&gt;.&lt;worker&gt;</code></td>
-							</tr>
-							<tr>
-								<td>Password</td>
-								<td><code>x</code></td>
-							</tr>
-						</tbody>
-					</table>
-				</Message>
+				<Stepper step={2} />
 			)}
 		</>
 	);

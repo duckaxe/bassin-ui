@@ -9,8 +9,8 @@
         width: 1.5rem;
         aspect-ratio: 1;
         border-radius: 50% 50%;
-        background: var(--color-front);
-        box-shadow: 0 0 0 0 var(--color-grey);
+        background: var(--color-grey);
+        box-shadow: 0 0 0 0 var(--color-light-grey);
         animation: pulse 1s ease-in-out infinite;
     }
 }

@@ -14,7 +14,7 @@ export default function Stepper({ step }: StepperProps) {
                     <hr />
                 </li>
                 <li>
-                    <span>Shares</span>
+                    <span>Miner</span>
                 </li>
             </ul>
 
